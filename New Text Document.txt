@@ -1,0 +1,458 @@
+{
+  "intents": [
+    {
+      "intent": "Department_of_Engineering",
+      "examples": [
+        {
+          "text": "Mechanical"
+        },
+        {
+          "text": "I am Mechanical Engineering"
+        },
+        {
+          "text": "Mechanical Engineer"
+        },
+        {
+          "text": "mech"
+        },
+        {
+          "text": "I want information related to Mechanical Engineering"
+        },
+        {
+          "text": "Mechanical Engineering"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "anyinfo",
+      "examples": [
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "thank you so much"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "A",
+      "examples": [
+        {
+          "text": "SOM"
+        },
+        {
+          "text": "A. Design"
+        },
+        {
+          "text": "Machine Design"
+        },
+        {
+          "text": "a"
+        },
+        {
+          "text": "Design"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "1",
+      "examples": [
+        {
+          "text": "1."
+        },
+        {
+          "text": "conf"
+        },
+        {
+          "text": "1"
+        },
+        {
+          "text": "one"
+        },
+        {
+          "text": "ek"
+        },
+        {
+          "text": "1. Conference"
+        },
+        {
+          "text": "Conference"
+        },
+        {
+          "text": "International Conference"
+        },
+        {
+          "text": "Conferences"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "B",
+      "examples": [
+        {
+          "text": "thermal engineering"
+        },
+        {
+          "text": "b"
+        },
+        {
+          "text": "thermal"
+        },
+        {
+          "text": "cfd"
+        },
+        {
+          "text": "cfd simulation"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "GATE",
+      "examples": [
+        {
+          "text": "ESE"
+        },
+        {
+          "text": "upsc"
+        },
+        {
+          "text": "5"
+        },
+        {
+          "text": "5. gate"
+        },
+        {
+          "text": "ies"
+        },
+        {
+          "text": "GATE"
+        },
+        {
+          "text": "gate 2021"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "otherengin",
+      "examples": [
+        {
+          "text": "EEE"
+        },
+        {
+          "text": "civil"
+        },
+        {
+          "text": "cse"
+        },
+        {
+          "text": "computer"
+        },
+        {
+          "text": "ece"
+        },
+        {
+          "text": "electrical"
+        },
+        {
+          "text": "IT engineering"
+        },
+        {
+          "text": "electronics engineering"
+        },
+        {
+          "text": "it"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Thermal",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. These  are upcoming conferences in Thermal. To get the more information please click on link "
+              },
+              {
+                "text": "1. ICMPC 2020 - IIT Indore"
+              },
+              {
+                "text": "Conference website- https://www.icmpc.com/index.php"
+              },
+              {
+                "text": "2. ICAMS2020: Third International Congress on Advances in Mechanical Science"
+              },
+              {
+                "text": "Conference website- https://www.icams2020.com/ "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#B",
+      "dialog_node": "node_4_1590325998252",
+      "previous_sibling": "node_3_1590325625268"
+    },
+    {
+      "type": "standard",
+      "title": "gate",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Click on Below link"
+              },
+              {
+                "text": "https://www.sarvgyan.com/articles/gate-2021"
+              },
+              {
+                "text": "GATE syllabus- https://collegedunia.com/exams/gate/syllabus"
+              },
+              {
+                "text": "Gate tips-1. https://collegedunia.com/exams/gate/preparation-tips   2. https://www.quora.com/What-are-some-tips-to-prepare-for-the-GATE, 3.https://engineering.careers360.com/articles/top-10-tips-crack-gate "
+              },
+              {
+                "text": "ESE Information- https://upsc.gov.in/examinations/Engineering%20Services%20%28Main%29%20Examination%2C%202018"
+              },
+              {
+                "text": " Gate calculator- https://www.tcsion.com/OnlineAssessment/ScientificCalculator/Calculator.html"
+              },
+              {
+                "text": "NPTEL Gate Lectures- https://nptel.ac.in/gate_paper.html"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#GATE",
+      "dialog_node": "node_5_1590326440068",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "other",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You are welcome. If you want any other information I am happy to help you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#anyinfo",
+      "dialog_node": "node_6_1590327032300",
+      "previous_sibling": "node_5_1590326848885"
+    },
+    {
+      "type": "standard",
+      "title": "Design",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. These  are upcoming conferences. To get the more information please click on link"
+              },
+              {
+                "text": "1. ICAMS2020: Third International Congress on Advances in Mechanical Science"
+              },
+              {
+                "text": "Conference website- https://www.icams2020.com/ "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#A",
+      "dialog_node": "node_3_1590325625268",
+      "previous_sibling": "node_2_1590325049529"
+    },
+    {
+      "type": "standard",
+      "title": "Mech",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. As we know that No TECH without MECH. So I eager to help you. Please, just enter the number for which you want infromation"
+              },
+              {
+                "text": "1. Conference"
+              },
+              {
+                "text": "2. Journal"
+              },
+              {
+                "text": "3. Online courses relate to your branch"
+              },
+              {
+                "text": "4. English courses"
+              },
+              {
+                "text": "5. Wants to take information related to  GATE or ESE"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Department_of_Engineering",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_5_1590326440068",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "othereng",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry right now I don't have any information related to your branch. Please check after some time"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#otherengin",
+      "dialog_node": "node_1_1590327539102",
+      "previous_sibling": "node_6_1590327032300"
+    },
+    {
+      "type": "standard",
+      "title": "Any other ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You are welcome. If you want any other information I am happy to help you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#anyinfo",
+      "dialog_node": "node_5_1590326848885",
+      "previous_sibling": "node_4_1590325998252"
+    },
+    {
+      "type": "standard",
+      "title": "mech conf",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. Their are number of conference are going to held in nearby time; so in which specific area you want to participate"
+              },
+              {
+                "text": "A. Design"
+              },
+              {
+                "text": "B. Thermal"
+              },
+              {
+                "text": "C. Production"
+              },
+              {
+                "text": "D. Applied Science"
+              },
+              {
+                "text": "E. CAD/CAM"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#1",
+      "dialog_node": "node_2_1590325049529",
+      "previous_sibling": "Anything else"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello I am Watson Assistant. Here I am help  you to choose best online coureses or content regarding your branch. So please enter your Engineeing Branch."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Engineering in Education",
+  "language": "en",
+  "description": ""
+}
